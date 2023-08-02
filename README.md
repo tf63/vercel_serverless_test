@@ -26,6 +26,7 @@
 
 **Go**
 - `api/*.go`で`net/http`にマッチする関数がserverless functionsとしてデプロイされる
+- デフォルトでは`Go 1.16`
 ```
     package handler
     
@@ -43,6 +44,7 @@
 
 **Python**
 - `api/*.py`で`BaseHTTPRequestHandler`を継承したクラス，または`wsgi` or `asgi`アプリケーション
+- デフォルトでは`python3.9`らしい
 ```
 from http.server import BaseHTTPRequestHandler
 from datetime import datetime

@@ -1,7 +1,7 @@
-# Dockerfile 参考
+# syntax=docker/dockerfile:1
 # https://matsuand.github.io/docs.docker.jp.onthefly/language/golang/build-images/
 
-FROM golang:1.19-alpine
+FROM golang:1.16-alpine
 
 # Set destination for COPY
 WORKDIR /app
@@ -16,16 +16,14 @@ RUN apk update --no-cache \
     wget
 
 # # Download Go modules
-COPY backend/go.mod backend/go.sum backend/Makefile ./
+# COPY backend/go.mod backend/go.sum backend/Makefile ./
 
-RUN go mod download
+# RUN go mod download
 
-RUN make install-tools
+# RUN make install-tools
 
 # # To bind to a TCP port, runtime parameters must be supplied to the docker command.
 # # But we can (optionally) document in the Dockerfile what ports
 # # the application is going to listen on by default.
 # # https://docs.docker.com/engine/reference/builder/#expose
-EXPOSE 8080
-EXPOSE 9090
-EXPOSE 6060
+EXPOSE 80

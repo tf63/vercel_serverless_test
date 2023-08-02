@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "name": "vercel-functions-demo",
+    "builds": [
+        { "src": "/app/go/*.go", "use": "@vercel/go" },
+        { "src": "/app/go/date/*.go", "use": "@vercel/go" },
+        { "src": "/app/python/main.py", "use": "@vercel/python" }
+    ],
+    "routes": [
+        { "src": "/app/go", "dest": "/go" },
+        { "src": "/app/go/date", "dest": "/go/date" },
+        { "src": "/app/python", "dest": "/python"}
+    ]
+}

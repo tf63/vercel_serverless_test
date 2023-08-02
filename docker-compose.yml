@@ -3,20 +3,29 @@ version: '3.3'
 services:
   go:
     build:
-      context: .
-      dockerfile: containers/go/Dockerfile
+      context: containers/go
+      dockerfile: Dockerfile
     tty: true
     volumes:
-      - ./go:/app
+      - ./app/go:/app
     ports:
-      - 8080:8080
-      - 9090:9090
-      - 6060:6060
-    depends_on:
-      - postgres
+      - 8080:80
     env_file:
       - .env.dev
-    # command: sh -c "go run cmd/rest/server.go"
+    # command: sh -c "go run index.go"
+
+  python:
+    build:
+      context: containers/python
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - ./app/python:/app
+    ports:
+      - 8081:80
+    env_file:
+      - .env.dev
+    command: sh -c "uvicorn main:app --host 0.0.0.0 --port 80"
 
   # postgres:
   #   image: postgres:15.2

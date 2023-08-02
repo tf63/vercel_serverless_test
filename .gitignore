@@ -5,6 +5,41 @@ migrations/
 .env.prod
 
 # ---------------------------------------------
+# Python
+# ---------------------------------------------
+
+# ignore migration files
+migrations/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ---------------------------------------------
 # Go (https://github.com/github/gitignore/blob/main/Go.gitignore)
 # ---------------------------------------------
 # If you prefer the allow list template instead of the deny list, see community template:
