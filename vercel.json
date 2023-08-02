@@ -7,8 +7,8 @@
         { "src": "/app/python/main.py", "use": "@vercel/python" }
     ],
     "routes": [
-        { "src": "/go", "dest": "/app/go" },
-        { "src": "/go/date", "dest": "/app/go/date" },
+        { "src": "/go", "dest": "/app/go/handler" },
+        { "src": "/go/date", "dest": "/app/go/handler/date" },
         { "src": "/python", "dest": "/app/python"}
     ]
 }
