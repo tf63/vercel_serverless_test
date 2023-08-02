@@ -5,7 +5,7 @@ FROM python:3.9
 WORKDIR /app
 
 # ローカルのrequirements.txtをコンテナの/appフォルダ直下に置く
-COPY containers/python/requirements.txt /app
+COPY requirements.txt /app
 
 # コンテナ内でpipをアップグレードした後、pip install -r requirements.txtを実行
 RUN pip install --no-cache-dir --upgrade pip && \
