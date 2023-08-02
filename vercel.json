@@ -6,9 +6,9 @@
         { "src": "/app/go/date/*.go", "use": "@vercel/go" },
         { "src": "/app/python/main.py", "use": "@vercel/python" }
     ],
-    "routes": [
-        { "src": "/go", "dest": "/app/go/handler" },
-        { "src": "/go/date", "dest": "/app/go/handler/date" },
-        { "src": "/python", "dest": "/app/python"}
+    "rewrites": [
+        { "source": "/go", "destination": "/app/go/handler" },
+        { "source": "/go/date", "destination": "/app/go/handler/date" },
+        { "source": "/python", "destination": "/app/python"}
     ]
 }
