@@ -9,6 +9,6 @@
     "rewrites": [
         { "source": "/go", "destination": "/app/go/handler" },
         { "source": "/go/date", "destination": "/app/go/handler/date" },
-        { "source": "/python", "destination": "/app/python"}
+        { "source": "/python", "destination": "/app/python/main.py"}
     ]
 }
