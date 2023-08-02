@@ -3,8 +3,8 @@ version: '3.3'
 services:
   go:
     build:
-      context: containers/go
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: containers/go/Dockerfile
     tty: true
     volumes:
       - ./app/go:/app
@@ -16,8 +16,8 @@ services:
 
   python:
     build:
-      context: containers/python
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: containers/python/Dockerfile
     tty: true
     volumes:
       - ./app/python:/app

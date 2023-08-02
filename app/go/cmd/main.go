@@ -1,18 +1,16 @@
 package main
 
 import (
-  "fmt"
-  "net/http"
+	"fmt"
+	"net/http"
+
+	"github.com/tf63/vercel_serverless_test/handler"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
-  fmt.Fprintf(w, "Vercel Serverless Functions Go Example")
-}
-
 func main() {
-	port := "80" 
+	port := "80"
 	fmt.Printf("Starting server on port %s...\n", port)
-	http.HandleFunc("/", Handler)
+	http.HandleFunc("/", handler.Handler)
 	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
 		fmt.Printf("Failed to start server: %v\n", err)
